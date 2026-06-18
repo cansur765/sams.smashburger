@@ -542,19 +542,19 @@
             
             <!-- Bild 1: Cheeseburger -->
             <div class="gallery-item">
-                <img src="{{ asset('images/cheeseburger.jpg') }}" alt="Cheeseburger">
+                <img src=https://6a33e1dc1da54822ca30991a.imgix.net/Cheeseburger.jpg?w=960&h=1020&ar=960%3A1020&fm=jpg alt="Cheeseburger">
                 <div class="burger-label">Cheeseburger</div>
             </div>
 
             <!-- Bild 2: Oklahoma -->
             <div class="gallery-item">
-                <img src="{{ asset('images/oklahoma.jpg') }}" alt="Oklahoma Burger">
+                <img src=https://6a33e1dc1da54822ca30991a.imgix.net/Oklahoma.jpg?auto=format&fit=fill&w=640alt="Oklahoma Burger">
                 <div class="burger-label">Oklahoma</div>
             </div>
 
             <!-- Bild 3: Jalapeño -->
             <div class="gallery-item">
-                <img src=https://i.imgur.com/wqu18rn.jpg alt="Jalapeño Burger">
+                <img src=https://6a33e1dc1da54822ca30991a.imgix.net/Jalapeno.jpg?auto=format&fit=fill&w=640 alt="Jalapeño Burger">
                 <div class="burger-label">Jalapeño</div>
             </div>
 
