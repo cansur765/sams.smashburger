@@ -14,6 +14,7 @@
             --truck-red: #6b1d24; /* Das tiefe Weinrot vom Wagen */
             --cream-bg: #fdfbf4;  /* Das helle Beige der Karte */
             --dark-text: #212529;
+            --pop-red: #d32f2f;   /* Das neue, poppigere Ketchup-Rot */
         }
 
         * {
@@ -24,15 +25,101 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #121212;
             color: #fff;
-            padding: 20px;
+            padding: 60px 20px;
+            background-color: #121212; /* Fallback */
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
         }
 
+        /* Das rot-weiße Karomuster: Größer, poppiger und leicht geneigt */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            z-index: -1;
+            background-color: #ffffff;
+            background-image: 
+                linear-gradient(45deg, var(--pop-red) 25%, transparent 25%, transparent 75%, var(--pop-red) 75%, var(--pop-red)),
+                linear-gradient(45deg, var(--pop-red) 25%, transparent 25%, transparent 75%, var(--pop-red) 75%, var(--pop-red));
+            /* Hier stellen wir die Größe der Quadrate ein (vorher 60px, jetzt fett auf 120px angehoben) */
+            background-size: 120px 120px;
+            background-position: 0 0, 60px 60px;
+            /* Hier wird das Muster um -6 Grad horizontal geneigt */
+            transform: rotate(-6deg);
+            transform-origin: center;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* Das rot-weiße Karomuster rein mit CSS generiert */
+            background-color: #ffffff;
+            background-image: 
+                linear-gradient(45deg, #8b1e26 25%, transparent 25%, transparent 75%, #8b1e26 75%, #8b1e26),
+                linear-gradient(45deg, #8b1e26 25%, transparent 25%, transparent 75%, #8b1e26 75%, #8b1e26);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+            
+            color: #fff;
+            padding: 40px 20px;
+        }
+
+        /* NEU: Der Container für das eigene Quadrat der Story */
+        .story-container {
+            display: block;
+            max-width: 500px;
+            margin: 0 auto 30px auto !important; /* Drückt das Menü nach unten weg */
+            border: 5px solid #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* STORY / INTRO SEKTION */
+        .section-story {
+            background-color: #1e1e1e;
+            padding: 30px 25px;
+            text-align: center;
+        }
+
+        .section-story h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: #fff;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .story-highlight {
+            font-weight: 600;
+            color: #fff;
+            font-size: 1.1rem;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .story-text {
+            font-size: 0.9rem;
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .story-text:last-child {
+            margin-bottom: 0;
+        }
+
+        /* MENÜ CONTAINER QUADRAT */
         .menu-container {
             max-width: 500px;
-            margin: 0 auto;
-            margin-bottom: 50px;
+            margin: 0 auto 50px auto;
             border: 5px solid #fff;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             border-radius: 12px;
@@ -171,6 +258,10 @@
             padding: 30px 20px;
             border-top: 4px solid var(--truck-red);
             text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .info-title {
@@ -244,18 +335,15 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        /* Instagram Markenfarbe */
         .social-button.instagram {
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
         }
 
-        /* TikTok Street-Style (Schwarz mit leichtem Neon-Vibe bei Hover) */
         .social-button.tiktok {
             background-color: #010101;
             border: 2px solid #fff;
         }
 
-        /* Hover Effekte */
         .social-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 15px rgba(255,255,255,0.1);
@@ -269,11 +357,26 @@
             background-color: #fff;
             color: #000;
         }
-
     </style>
 </head>
 <body>
+    
+    <!-- 1. QUADRAT: DIE STORY -->
+    <div class="story-container">
+        <div class="section-story">
+            <h2>UNSERE STORY</h2>
+            <p class="story-highlight">Willkommen bei Sam's Smashburger – Familiengeführt & betrieben.</p>
+            <p class="story-text">
+                Sam's Smashburger begann als kleiner Pop-up-Stand auf Straßenfesten und Flohmärkten im Kölner Norden und Umgebung im April 2024. 
+                Ursprünglich wurde es als Leidenschaftsprojekt gegründet, um unsere Version eines perfekten Smashburgers in Köln zu kreieren und zu servieren.
+            </p>
+            <p class="story-text">
+                Nach einem erfolgreichen Jahr als Pop-up-Foodstand eröffnete Sam's Smashburger 2025 seinen ersten festen Stand auf der Boltensternstraße in Köln-Niehl!
+            </p>
+        </div>
+    </div>
 
+    <!-- 2. QUADRAT: DIE SPEISEKARTE -->
     <div class="menu-container">
         
         <!-- BURGER SEKTION -->
@@ -362,46 +465,44 @@
 
     </div>
 
-    <!-- NEU: ADRESSE & ÖFFNUNGSZEITEN -->
-        <!-- ADRESSE, ZEITEN & SOCIALS -->
-        <div class="section-info">
-            <h2 class="info-title">STANDORT & ZEITEN</h2>
-            
-            <div class="address-box">
-                <p class="address-main">Sam's Smash Burger</p>
-                <p>Boltensternstraße 104-112</p>
-                <p>50735 Köln (Cologne)</p>
-            </div>
-
-            <table class="hours-table">
-                <tr>
-                    <td>Mo – Do:</td>
-                    <td class="text-right">12:00 – 22:00 Uhr</td>
-                </tr>
-                <tr>
-                    <td>Fr:</td>
-                    <td class="text-right">15:00 – 22:00 Uhr</td>
-                </tr>
-                <tr>
-                    <td>Sa:</td>
-                    <td class="text-right">12:00 – 22:00 Uhr</td>
-                </tr>
-                <tr class="closed-day">
-                    <td>So:</td>
-                    <td class="text-right">❌ GESCHLOSSEN</td>
-                </tr>
-            </table>
-
-            <!-- NEU: Die Social Media Buttons im Street-Style -->
-            <div class="social-container">
-                <a href="https://www.instagram.com/sams.smashburger" target="_blank" class="social-button instagram">
-                    Instagram
-                </a>
-                <a href="https://www.tiktok.com/@sams.smashburger" target="_blank" class="social-button tiktok">
-                    TikTok
-                </a>
-            </div>
+    <!-- 3. QUADRAT: STANDORT, ZEITEN & SOCIALS -->
+    <div class="section-info">
+        <h2 class="info-title">STANDORT & ZEITEN</h2>
+        
+        <div class="address-box">
+            <p class="address-main">Sam's Smash Burger</p>
+            <p>Boltensternstraße 104-112</p>
+            <p>50735 Köln (Cologne)</p>
         </div>
+
+        <table class="hours-table">
+            <tr>
+                <td>Mo – Do:</td>
+                <td class="text-right">12:00 – 22:00 Uhr</td>
+            </tr>
+            <tr>
+                <td>Fr:</td>
+                <td class="text-right">15:00 – 22:00 Uhr</td>
+            </tr>
+            <tr>
+                <td>Sa:</td>
+                <td class="text-right">12:00 – 22:00 Uhr</td>
+            </tr>
+            <tr class="closed-day">
+                <td>So:</td>
+                <td class="text-right">❌ GESCHLOSSEN</td>
+            </tr>
+        </table>
+
+        <div class="social-container">
+            <a href="https://www.instagram.com/sams.smashburger" target="_blank" class="social-button instagram">
+                Instagram
+            </a>
+            <a href="https://www.tiktok.com/@sams.smashburger" target="_blank" class="social-button tiktok">
+                TikTok
+            </a>
+        </div>
+    </div>
 
 </body>
 </html>
