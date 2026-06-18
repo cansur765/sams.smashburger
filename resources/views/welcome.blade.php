@@ -357,6 +357,76 @@
             background-color: #fff;
             color: #000;
         }
+
+        /* GALERIE QUADRAT */
+        .gallery-container {
+            max-width: 500px;
+            margin: 0 auto 30px auto !important;
+            border: 5px solid #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #1e1e1e;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        .gallery-container h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: #fff;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        /* Das Raster für die 3 Bilder */
+        .burger-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Auf Handys untereinander */
+            gap: 15px;
+        }
+
+        /* Ab Tablet/PC-Größe nebeneinander */
+        @media(min-width: 400px) {
+            .burger-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            aspect-ratio: 1 / 1; /* Macht die Bilder perfekt quadratisch */
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        /* Kleiner Hover-Effekt wie bei Easy Street Burgers */
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Beschriftung auf dem Bild */
+        .burger-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            color: #fff;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
+            padding: 8px 5px 5px 5px;
+            letter-spacing: 0.5px;
+        }
+
     </style>
 </head>
 <body>
@@ -465,7 +535,33 @@
 
     </div>
 
-    <!-- 3. QUADRAT: STANDORT, ZEITEN & SOCIALS -->
+    <!-- 3. QUADRAT: BURGER-GALERIE -->
+    <div class="gallery-container">
+        <h2>UNSERE SMASH BURGER</h2>
+        <div class="burger-grid">
+            
+            <!-- Bild 1: Cheeseburger -->
+            <div class="gallery-item">
+                <img src="{{ asset('images/cheeseburger.jpg') }}" alt="Cheeseburger">
+                <div class="burger-label">Cheeseburger</div>
+            </div>
+
+            <!-- Bild 2: Oklahoma -->
+            <div class="gallery-item">
+                <img src="{{ asset('images/oklahoma.jpg') }}" alt="Oklahoma Burger">
+                <div class="burger-label">Oklahoma</div>
+            </div>
+
+            <!-- Bild 3: Jalapeño -->
+            <div class="gallery-item">
+                <img src="{{ asset('images/jalapeno.jpg') }}" alt="Jalapeño Burger">
+                <div class="burger-label">Jalapeño</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 4. QUADRAT: STANDORT, ZEITEN & SOCIALS -->
     <div class="section-info">
         <h2 class="info-title">STANDORT & ZEITEN</h2>
         
