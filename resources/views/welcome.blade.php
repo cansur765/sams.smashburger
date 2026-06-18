@@ -221,6 +221,55 @@
             color: #ff4d4d;
         }
 
+        /* SOCIAL MEDIA BUTTONS */
+        .social-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-button {
+            display: inline-block;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            min-width: 130px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        /* Instagram Markenfarbe */
+        .social-button.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        /* TikTok Street-Style (Schwarz mit leichtem Neon-Vibe bei Hover) */
+        .social-button.tiktok {
+            background-color: #010101;
+            border: 2px solid #fff;
+        }
+
+        /* Hover Effekte */
+        .social-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255,255,255,0.1);
+        }
+
+        .social-button.instagram:hover {
+            filter: brightness(1.1);
+        }
+
+        .social-button.tiktok:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
     </style>
 </head>
 <body>
@@ -314,6 +363,7 @@
     </div>
 
     <!-- NEU: ADRESSE & ÖFFNUNGSZEITEN -->
+        <!-- ADRESSE, ZEITEN & SOCIALS -->
         <div class="section-info">
             <h2 class="info-title">STANDORT & ZEITEN</h2>
             
@@ -341,6 +391,16 @@
                     <td class="text-right">❌ GESCHLOSSEN</td>
                 </tr>
             </table>
+
+            <!-- NEU: Die Social Media Buttons im Street-Style -->
+            <div class="social-container">
+                <a href="https://www.instagram.com/sams.smashburger" target="_blank" class="social-button instagram">
+                    Instagram
+                </a>
+                <a href="https://www.tiktok.com/@sams.smashburger" target="_blank" class="social-button tiktok">
+                    TikTok
+                </a>
+            </div>
         </div>
 
 </body>
