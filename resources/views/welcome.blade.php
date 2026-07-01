@@ -427,6 +427,92 @@
             letter-spacing: 0.5px;
         }
 
+        /* REZENSIONEN STYLING */
+        .reviews-container {
+            max-width: 500px;
+            margin: 0 auto 30px auto !important;
+            border: 5px solid #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #1e1e1e;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        .reviews-container h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: #fff;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .reviews-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .review-card {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid var(--pop-red); /* Nutzt dein neues poppiges Rot */
+        }
+
+        .stars {
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+        }
+
+        .review-text {
+            font-size: 0.85rem;
+            color: #ddd;
+            font-style: italic;
+            line-height: 1.4;
+            margin-bottom: 6px;
+        }
+
+        .review-author {
+            font-size: 0.8rem;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .google-badge {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+        }
+
+        .google-badge p {
+            margin-bottom: 12px;
+        }
+
+        /* Der interaktive Button fürs direkte Feedback */
+        .review-button {
+            display: inline-block;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            color: #fff;
+            background-color: var(--pop-red);
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .review-button:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.2);
+        }
+
     </style>
 </head>
 <body>
@@ -561,7 +647,37 @@
         </div>
     </div>
 
-    <!-- 4. QUADRAT: STANDORT, ZEITEN & SOCIALS -->
+    <!-- 4. QUADRAT: GOOGLE REZENSIONEN -->
+    <div class="reviews-container">
+        <h2>DAS SAGEN UNSERE GÄSTE</h2>
+        <div class="reviews-grid">
+            
+            <!-- Bewertung 1 -->
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"Der beste Smashburger in ganz Köln! Die Kruste vom Patty ist einfach geisteskrank knusprig und die House Sauce passt perfekt."</p>
+                <p class="review-author">- Maximilian M.</p>
+            </div>
+
+            <!-- Bewertung 2 -->
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">"Letztes Jahr auf dem Flohmarkt probiert und seitdem süchtig. Endlich ein fester Stand in Niehl!"</p>
+                <p class="review-author">- Sarah K.</p>
+            </div>
+
+        </div>
+
+        <!-- Google Link zum Bewerten -->
+        <div class="google-badge">
+            <p>Gesamtbewertung: <strong>4.9 / 5 Sterne</strong> ⭐</p>
+            <a href="https://www.google.com/search?sca_esv=9d979678eff53443&sxsrf=APpeQntf869WzwmjbJ3ODgtzV8YDqwIehA:1782920373165&q=Sam%E2%80%99s+Smash+Burger+Rezensionen&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_7DsZcbGKu4X70wffLheAXw0TSFcbVzce1xxymW8Ldv-IoxqQNQJtpR6LX8yVzVjCgM0n_8%3D&uds=AJ5uw18ntM3Q-42NR7dax1P9A6o1yUM1VGtIq2XCMQ4jp6QkPcyKSKIEaicKcwQvmX52SUhQEogVL4RnSgQ6u1z_Z3unwoWwVvSM4UAeJaCW3pziJrljkMNwT0nyhYC9V4iUq7uYQwig&sa=X&ved=2ahUKEwjY24T857GVAxXEBdsEHXagL88Q3PALegQIKhAF&biw=1024&bih=1001&dpr=1" target="_blank" class="review-button">
+                Jetzt auf Google bewerten
+            </a>
+        </div>
+    </div>
+    
+    <!-- 5. QUADRAT: STANDORT, ZEITEN & SOCIALS -->
     <div class="section-info">
         <h2 class="info-title">STANDORT & ZEITEN</h2>
         
