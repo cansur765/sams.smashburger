@@ -561,7 +561,7 @@
                         SINGLE: 7,50€<br>DOUBLE: 10,50€
                     </div>
                 </div>
-                <div class="item-desc">Beef Patty, American Cheese, Grilled Onions, Pickles, House Sauce</div>
+                <div class="item-desc">Beef Patty, American Cheese, Pickles, House Sauce</div>
             </div>
 
             <!-- Jalapeño -->
@@ -628,7 +628,7 @@
             
             <!-- Bild 1: Cheeseburger -->
             <div class="gallery-item">
-                <img src=https://6a33e1dc1da54822ca30991a.imgix.net/Cheeseburger.jpg?w=960&h=1020&ar=960%3A1020&fm=jpg alt="Cheeseburger">
+                <img src=https://6a33e1dc1da54822ca30991a.imgix.net/D12247AE-90D8-46D7-A457-50D6C9BE196D.jpeg alt="Cheeseburger">
                 <div class="burger-label">Cheeseburger</div>
             </div>
 
